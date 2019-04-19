@@ -6,7 +6,6 @@
 #import "JPPhotoBrowserController.h"
 #import "JPPhotoShowController.h"
 #import "JPPhotoBrowserAnimator.h"
-#import "JPPhotoAuthor.h"
 #import "UIView+JPLayout.h"
 
 @interface JPPhotoBrowserController ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource,JPPhotoShowControllerDelegate,UIScrollViewDelegate>
