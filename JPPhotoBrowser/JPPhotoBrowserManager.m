@@ -5,6 +5,13 @@
 #import "JPPhotoBrowserManager.h"
 #import "JPPhotoBrowserController.h"
 
+@interface JPPhotoBrowserManager ()
+
+/** photoBrowserController */
+@property(nonatomic,strong) JPPhotoBrowserController *photoBrowserController;
+
+@end
+
 @implementation JPPhotoBrowserManager
 
 + (instancetype)defaultPhotoBrowserManager {
@@ -51,6 +58,8 @@
             photoBrowserController.modalPresentationStyle = UIModalPresentationCustom;
         }
         [self p_HandleData:photoBrowserController];
+        [photoBrowserController setPageViewController];
+        self.photoBrowserController = photoBrowserController;
         [currentController presentViewController:photoBrowserController animated:YES completion:nil];
     }
 }
@@ -85,6 +94,7 @@
 #pragma mark - handle data
 - (void)p_HandleData:(JPPhotoBrowserController *)photoBrowserController {
 
+    photoBrowserController.backViewColor = self.backViewColor;
     photoBrowserController.isShowTopIndex = self.isShowTopIndex;
     photoBrowserController.currentIndexColor = self.currentIndexColor;
     photoBrowserController.currentIndexFontSize = self.currentIndexFontSize;
@@ -94,8 +104,12 @@
     photoBrowserController.isShowSaveImage = self.isShowSaveImage;
     photoBrowserController.saveImage = self.saveImage;
     photoBrowserController.scrollMaxMargin = self.scrollMaxMargin;
-    //当优先设置backViewColor时,Browser控制器会直接走 viewDidLoad方法,很奇怪,所以此处将color设置放在后面
-    photoBrowserController.backViewColor = self.backViewColor;
+    
+}
+
+- (UIViewController *)getPhotoBrowserController {
+    
+    return self.photoBrowserController;
 }
 
 @end

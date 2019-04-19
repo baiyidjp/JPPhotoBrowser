@@ -97,15 +97,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    [self p_SetPageViewController];
-
-    self.animator.currentImageView = self.currentPhotoShowController.showImageView;
-    self.animator.backViewColor = self.backViewColor;
 }
 
 /** 设置分页控制器 */
-- (void)p_SetPageViewController {
+- (void)setPageViewController {
 
     //UIPageViewControllerTransitionStyleScroll滑动换页  UIPageViewControllerNavigationOrientationHorizontal横向滚动  UIPageViewControllerOptionInterPageSpacingKey页间距
     UIPageViewController *pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey:@20}];
@@ -117,6 +112,7 @@
     showController.scrollMaxMargin = self.scrollMaxMargin;
     //设置show为page的子控制器
     [pageViewController setViewControllers:@[showController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    self.animator.currentImageView = showController.showImageView;
 
     //将分页控制器添加为当前的子控制器
     [self.view addSubview:pageViewController.view];
@@ -131,18 +127,10 @@
     self.view.gestureRecognizers = pageViewController.gestureRecognizers;
 
     //顶部提示
-    UILabel * tipLabel = [[UILabel alloc] init];
-    tipLabel.frame = CGRectMake(0, STATUS_BAR_HEIGHT+10, self.view.bounds.size.width, 25);
-    tipLabel.textAlignment = NSTextAlignmentCenter;
-    tipLabel.hidden = (self.imageDatas.count > 1) ? NO : YES;
-    [self.view addSubview:tipLabel];
-    self.topIndexLabel = tipLabel;
+    [self.view addSubview:self.topIndexLabel];
 
     //保存
-    UIButton *saveImageButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-32-16, self.view.bounds.size.height-BOTTOM_MARGIN(16+32), 32, 32)];
-    [saveImageButton addTarget:self action:@selector(p_SaveImage) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:saveImageButton];
-    self.saveImageButton = saveImageButton;
+    [self.view addSubview:self.saveImageButton];
 }
 
 /**
@@ -258,6 +246,7 @@
     
     _backViewColor = backViewColor;
     self.view.backgroundColor = backViewColor;
+    self.animator.backViewColor = backViewColor;
 }
 
 - (void)setIsShowTopIndex:(BOOL)isShowTopIndex {
@@ -285,11 +274,6 @@
 
     [self.saveImageButton setImage:saveImage forState:UIControlStateNormal];
     [self.saveImageButton setImage:saveImage forState:UIControlStateHighlighted];
-}
-
-- (void)setScrollMaxMargin:(CGFloat)scrollMaxMargin {
-    
-    _scrollMaxMargin = scrollMaxMargin;
 }
 
 - (JPPhotoBrowserAnimator *)animator{
@@ -320,6 +304,28 @@
         }
     }
     return scrollView;
+}
+
+- (UILabel *)topIndexLabel {
+    
+    if (!_topIndexLabel) {
+        
+        _topIndexLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, STATUS_BAR_HEIGHT+10, self.view.bounds.size.width, 25)];
+        _topIndexLabel.textAlignment = NSTextAlignmentCenter;
+        _topIndexLabel.hidden = (self.imageDatas.count > 1) ? NO : YES;
+        
+    }
+    return _topIndexLabel;
+}
+
+- (UIButton *)saveImageButton {
+    
+    if (!_saveImageButton) {
+        
+        _saveImageButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-32-16, self.view.bounds.size.height-BOTTOM_MARGIN(16+32), 32, 32)];
+        [_saveImageButton addTarget:self action:@selector(p_SaveImage) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _saveImageButton;
 }
 
 

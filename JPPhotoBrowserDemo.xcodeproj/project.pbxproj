@@ -76,24 +76,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A22FD08C1E948AF90039D6A4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				F58750FE20EC67300070EF69 /* JPPhotoAuthor.h */,
-				F58750FD20EC672F0070EF69 /* JPPhotoAuthor.m */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		A22FD0931E948AF90039D6A4 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				A22FD0941E948AF90039D6A4 /* JPImageShowBackView.h */,
-				A22FD0951E948AF90039D6A4 /* JPImageShowBackView.m */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		A2B585B31E8F8EDD0000F938 = {
 			isa = PBXGroup;
 			children = (
@@ -116,14 +98,16 @@
 			isa = PBXGroup;
 			children = (
 				B813C63A2269C99F004A7A93 /* JPPhotoBrowser */,
-				A22FD08C1E948AF90039D6A4 /* Extensions */,
-				A22FD0931E948AF90039D6A4 /* Views */,
 				A2B585C21E8F8EDD0000F938 /* AppDelegate.h */,
 				A2B585C31E8F8EDD0000F938 /* AppDelegate.m */,
 				A2B585C51E8F8EDD0000F938 /* ViewController.h */,
 				A2B585C61E8F8EDD0000F938 /* ViewController.m */,
+				F58750FE20EC67300070EF69 /* JPPhotoAuthor.h */,
+				F58750FD20EC672F0070EF69 /* JPPhotoAuthor.m */,
 				A2B585D61E8F90EC0000F938 /* ImageShowViewController.h */,
 				A2B585D71E8F90EC0000F938 /* ImageShowViewController.m */,
+				A22FD0941E948AF90039D6A4 /* JPImageShowBackView.h */,
+				A22FD0951E948AF90039D6A4 /* JPImageShowBackView.m */,
 				A2B585C81E8F8EDD0000F938 /* Main.storyboard */,
 				A2B585CB1E8F8EDD0000F938 /* Assets.xcassets */,
 				A2B585CD1E8F8EDD0000F938 /* LaunchScreen.storyboard */,

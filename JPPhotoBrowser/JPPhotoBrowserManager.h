@@ -14,6 +14,8 @@ typedef void(^SelectedSaveImageCompletion)(UIImage *image);
 /** completion */
 @property(nonatomic,copy) SelectedSaveImageCompletion completion;
 
+- (UIViewController *)getPhotoBrowserController;
+
 /**
  show photo images/index/delegate 没有转场动画
 

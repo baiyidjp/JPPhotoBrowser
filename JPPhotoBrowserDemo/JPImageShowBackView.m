@@ -20,6 +20,9 @@ static  CGFloat ImageIntterMargin = 8;
 static  CGFloat ImageOutterMargin = 12;
 
 @implementation JPImageShowBackView
+{
+    JPPhotoBrowserManager *manager;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -156,7 +159,7 @@ static  CGFloat ImageOutterMargin = 12;
         }
     }
 
-    JPPhotoBrowserManager *manager = [[JPPhotoBrowserManager alloc] init];
+    manager = [[JPPhotoBrowserManager alloc] init];
     manager.currentIndexColor = [UIColor orangeColor];
     manager.isShowSaveImage = YES;
     manager.saveImage = [UIImage imageNamed:@"saveImage"];
@@ -189,7 +192,7 @@ static  CGFloat ImageOutterMargin = 12;
         }];
         [alertController addAction:cancelAction];
         [alertController addAction:settingsAction];
-        [self.superController presentViewController:alertController animated:YES completion:nil];
+        [[manager getPhotoBrowserController] presentViewController:alertController animated:YES completion:nil];
 
     }];
 
@@ -204,7 +207,10 @@ static  CGFloat ImageOutterMargin = 12;
     }else {
         saveStr = @"保存失败";
     }
-    NSLog(@"%@",saveStr);
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:saveStr preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+    [alertController addAction:cancelAction];
+    [[manager getPhotoBrowserController] presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

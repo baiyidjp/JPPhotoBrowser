@@ -18,6 +18,8 @@ typedef void(^SelectedSaveImageCompletion)(UIImage *image);
 /** completion */
 @property(nonatomic,copy) SelectedSaveImageCompletion completion;
 
+- (void)setPageViewController;
+
 /****** 配置 ******/
 
 /** backViewColor default black */

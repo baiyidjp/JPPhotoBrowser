@@ -159,8 +159,17 @@ static const CGFloat kMinAlpha = 0.3;
         self.scrollView.zoomScale = scale;
         if (scale == 2) {
             //双击放大,居中显示
-            if (self.scrollView.contentOffset.y == 0) {
+            if (self.scrollView.jp_h >= self.showImageView.jp_h) {
                 self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x+self.scrollView.jp_w*0.5, self.scrollView.contentOffset.y);
+            } else {
+                //长图不处理Y
+                if (self.showImageView.jp_h > 2*self.scrollView.jp_h) {
+                    self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x+self.scrollView.jp_w*0.5, 0);
+                } else {
+                    //放大后比scrollView高,需要适配Y
+                    self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x+self.scrollView.jp_w*0.5, (self.showImageView.jp_h-self.scrollView.jp_h)*0.5);
+                }
+
             }
         }
     }];
