@@ -333,7 +333,7 @@ static const CGFloat kMinAlpha = 0.3;
         self.isRebound = YES;
 
         CGFloat scrollY = scrollView.contentOffset.y;
-        
+
         if (scrollY <= -self.scrollMaxMargin) {
 
             if (self.isScrollDown) {
