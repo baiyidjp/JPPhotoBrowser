@@ -80,6 +80,7 @@
 
     self.backViewColor = [UIColor blackColor];
     self.isShowTopIndex = YES;
+    self.isHiddenTopIndexOnlyOne = YES;
     self.currentIndexColor = [UIColor redColor];
     self.currentIndexFontSize = [UIFont boldSystemFontOfSize:20];
     self.totalIndexColor = [UIColor whiteColor];
@@ -96,6 +97,7 @@
 
     photoBrowserController.backViewColor = self.backViewColor;
     photoBrowserController.isShowTopIndex = self.isShowTopIndex;
+    photoBrowserController.isHiddenTopIndexOnlyOne = self.isHiddenTopIndexOnlyOne;
     photoBrowserController.currentIndexColor = self.currentIndexColor;
     photoBrowserController.currentIndexFontSize = self.currentIndexFontSize;
     photoBrowserController.totalIndexColor = self.totalIndexColor;

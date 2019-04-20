@@ -94,6 +94,9 @@ typedef void(^SelectedSaveImageCompletion)(UIImage *image);
 /** isShowTopIndex default YES */
 @property(nonatomic,assign) BOOL isShowTopIndex;
 
+/** isHiddenTopIndexOnlyOne default YES */
+@property(nonatomic,assign) BOOL isHiddenTopIndexOnlyOne;
+
 /** currentIndexColor default red */
 @property(nonatomic,strong) UIColor *currentIndexColor;
 

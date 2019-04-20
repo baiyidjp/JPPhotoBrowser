@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "JPPhotoBrowser"
-s.version      = "1.0.0"
+s.version      = "1.0.2"
 s.summary      = "Browse picture like WeChat."
 s.homepage     = "https://github.com/baiyidjp/JPPhotoBrowserDemo"
 s.license      = "MIT"

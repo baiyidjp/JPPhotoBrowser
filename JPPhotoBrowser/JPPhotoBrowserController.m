@@ -130,6 +130,26 @@
 
     //保存
     [self.view addSubview:self.saveImageButton];
+    
+    self.view.backgroundColor = self.backViewColor;
+    self.animator.backViewColor = self.backViewColor;
+
+    self.topIndexLabel.hidden = !self.isShowTopIndex;
+    if (self.isShowTopIndex) {
+        [self p_SetTopIndexLabelText:self.currentImageIndex];
+        if (self.isHiddenTopIndexOnlyOne && self.imageDatas.count <= 1) {
+            self.topIndexLabel.hidden = YES;
+        } else {
+            self.topIndexLabel.hidden = NO;
+        }
+    }
+
+    self.saveImageButton.hidden = !self.isShowSaveImage;
+    if (self.isShowSaveImage) {
+        [self.saveImageButton setImage:self.saveImage forState:UIControlStateNormal];
+        [self.saveImageButton setImage:self.saveImage forState:UIControlStateHighlighted];
+    }
+
 }
 
 /**
@@ -207,7 +227,21 @@
 - (void)showControllerDidMoveImageCanScrollPageController:(BOOL)canScroll {
     
     self.scrollView.scrollEnabled = canScroll;
-    self.topIndexLabel.hidden = self.saveImageButton.hidden = !canScroll;
+    if (canScroll) {
+        self.saveImageButton.hidden = !self.isShowSaveImage;
+        self.topIndexLabel.hidden = !self.isShowTopIndex;
+        if (self.isShowTopIndex) {
+            [self p_SetTopIndexLabelText:self.currentImageIndex];
+            if (self.isHiddenTopIndexOnlyOne && self.imageDatas.count <= 1) {
+                self.topIndexLabel.hidden = YES;
+            } else {
+                self.topIndexLabel.hidden = NO;
+            }
+        }
+
+    } else {
+        self.topIndexLabel.hidden = self.saveImageButton.hidden = YES;
+    }
 }
 
 /** 设置顶部提示 */
@@ -239,40 +273,6 @@
     } else {
         NSLog(@"未设置browser completion");
     }
-}
-
-- (void)setBackViewColor:(UIColor *)backViewColor {
-    
-    _backViewColor = backViewColor;
-    self.view.backgroundColor = backViewColor;
-    self.animator.backViewColor = backViewColor;
-}
-
-- (void)setIsShowTopIndex:(BOOL)isShowTopIndex {
-    
-    _isShowTopIndex = isShowTopIndex;
-    self.topIndexLabel.hidden = !isShowTopIndex;
-}
-
-- (void)setMiddleString:(NSString *)middleString {
-
-    _middleString = middleString;
-    [self p_SetTopIndexLabelText:self.currentImageIndex];
-}
-
-- (void)setIsShowSaveImage:(BOOL)isShowSaveImage {
-
-    _isShowSaveImage = isShowSaveImage;
-
-    self.saveImageButton.hidden = !isShowSaveImage;
-}
-
-- (void)setSaveImage:(UIImage *)saveImage {
-
-    _saveImage = saveImage;
-
-    [self.saveImageButton setImage:saveImage forState:UIControlStateNormal];
-    [self.saveImageButton setImage:saveImage forState:UIControlStateHighlighted];
 }
 
 - (JPPhotoBrowserAnimator *)animator{
@@ -311,7 +311,6 @@
         
         _topIndexLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, STATUS_BAR_HEIGHT+10, self.view.bounds.size.width, 25)];
         _topIndexLabel.textAlignment = NSTextAlignmentCenter;
-        _topIndexLabel.hidden = (self.imageDatas.count > 1) ? NO : YES;
         
     }
     return _topIndexLabel;
