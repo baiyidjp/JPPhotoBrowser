@@ -4,7 +4,7 @@
 //
 
 #import "JPPhotoShowController.h"
-#import "UIView+JPLayout.h"
+#import "UIView+JPCategory.h"
 #import "UIImageView+WebCache.h"
 
 static const CGFloat kDefaultAnimationDurationTime = 0.25;

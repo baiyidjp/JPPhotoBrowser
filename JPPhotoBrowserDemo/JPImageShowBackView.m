@@ -7,7 +7,7 @@
 //
 
 #import "JPImageShowBackView.h"
-#import "UIView+JPLayout.h"
+#import "UIView+JPCategory.h"
 #import "UIImageView+WebCache.h"
 #import "JPPhotoBrowserManager.h"
 #import "JPPhotoAuthor.h"

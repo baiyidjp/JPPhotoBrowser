@@ -19,7 +19,6 @@
 		B813C6452269C99F004A7A93 /* JPPhotoShowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B813C63B2269C99F004A7A93 /* JPPhotoShowController.m */; };
 		B813C6462269C99F004A7A93 /* JPPhotoBrowserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B813C6402269C99F004A7A93 /* JPPhotoBrowserManager.m */; };
 		B813C6472269C99F004A7A93 /* JPPhotoBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = B813C6422269C99F004A7A93 /* JPPhotoBrowserController.m */; };
-		B813C6482269C99F004A7A93 /* UIView+JPLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B813C6432269C99F004A7A93 /* UIView+JPLayout.m */; };
 		B813C6492269C99F004A7A93 /* JPPhotoBrowserAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = B813C6442269C99F004A7A93 /* JPPhotoBrowserAnimator.m */; };
 		F58750FF20EC67300070EF69 /* JPPhotoAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = F58750FD20EC672F0070EF69 /* JPPhotoAuthor.m */; };
 /* End PBXBuildFile section */
@@ -44,12 +43,10 @@
 		B813C63B2269C99F004A7A93 /* JPPhotoShowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPhotoShowController.m; sourceTree = "<group>"; };
 		B813C63C2269C99F004A7A93 /* JPPhotoBrowserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPhotoBrowserManager.h; sourceTree = "<group>"; };
 		B813C63D2269C99F004A7A93 /* JPPhotoBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPhotoBrowserController.h; sourceTree = "<group>"; };
-		B813C63E2269C99F004A7A93 /* UIView+JPLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JPLayout.h"; sourceTree = "<group>"; };
 		B813C63F2269C99F004A7A93 /* JPPhotoBrowserAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPhotoBrowserAnimator.h; sourceTree = "<group>"; };
 		B813C6402269C99F004A7A93 /* JPPhotoBrowserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPhotoBrowserManager.m; sourceTree = "<group>"; };
 		B813C6412269C99F004A7A93 /* JPPhotoShowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPhotoShowController.h; sourceTree = "<group>"; };
 		B813C6422269C99F004A7A93 /* JPPhotoBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPhotoBrowserController.m; sourceTree = "<group>"; };
-		B813C6432269C99F004A7A93 /* UIView+JPLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JPLayout.m"; sourceTree = "<group>"; };
 		B813C6442269C99F004A7A93 /* JPPhotoBrowserAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPhotoBrowserAnimator.m; sourceTree = "<group>"; };
 		D4ACFD40F66D59B92C5B4F2A /* Pods-JPPhotoBrowserDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPPhotoBrowserDemo.debug.xcconfig"; path = "Target Support Files/Pods-JPPhotoBrowserDemo/Pods-JPPhotoBrowserDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F58750FD20EC672F0070EF69 /* JPPhotoAuthor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPhotoAuthor.m; sourceTree = "<group>"; };
@@ -128,8 +125,6 @@
 		B813C63A2269C99F004A7A93 /* JPPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				B813C63E2269C99F004A7A93 /* UIView+JPLayout.h */,
-				B813C6432269C99F004A7A93 /* UIView+JPLayout.m */,
 				B813C63F2269C99F004A7A93 /* JPPhotoBrowserAnimator.h */,
 				B813C6442269C99F004A7A93 /* JPPhotoBrowserAnimator.m */,
 				B813C63C2269C99F004A7A93 /* JPPhotoBrowserManager.h */,
@@ -251,7 +246,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B813C6492269C99F004A7A93 /* JPPhotoBrowserAnimator.m in Sources */,
-				B813C6482269C99F004A7A93 /* UIView+JPLayout.m in Sources */,
 				F58750FF20EC67300070EF69 /* JPPhotoAuthor.m in Sources */,
 				B813C6452269C99F004A7A93 /* JPPhotoShowController.m in Sources */,
 				A2B585C71E8F8EDD0000F938 /* ViewController.m in Sources */,
@@ -381,9 +375,11 @@
 			baseConfigurationReference = D4ACFD40F66D59B92C5B4F2A /* Pods-JPPhotoBrowserDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 33M7V22L6Y;
 				INFOPLIST_FILE = JPPhotoBrowserDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stey.app.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -394,9 +390,11 @@
 			baseConfigurationReference = 09E692311A426F4F72CEC04C /* Pods-JPPhotoBrowserDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 33M7V22L6Y;
 				INFOPLIST_FILE = JPPhotoBrowserDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stey.app.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

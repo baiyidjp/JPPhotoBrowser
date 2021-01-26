@@ -6,7 +6,8 @@
 #import "JPPhotoBrowserController.h"
 #import "JPPhotoShowController.h"
 #import "JPPhotoBrowserAnimator.h"
-#import "UIView+JPLayout.h"
+#import "UIView+JPCategory.h"
+#import "JPLayoutUtils.h"
 
 @interface JPPhotoBrowserController ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource,JPPhotoShowControllerDelegate,UIScrollViewDelegate>
 
@@ -309,7 +310,7 @@
     
     if (!_topIndexLabel) {
         
-        _topIndexLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, STATUS_BAR_HEIGHT+10, self.view.bounds.size.width, 25)];
+        _topIndexLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, JP_STATUSBARHEIGHT+10, self.view.bounds.size.width, 25)];
         _topIndexLabel.textAlignment = NSTextAlignmentCenter;
         
     }
@@ -320,7 +321,7 @@
     
     if (!_saveImageButton) {
         
-        _saveImageButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-32-16, self.view.bounds.size.height-BOTTOM_MARGIN(16+32), 32, 32)];
+        _saveImageButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-32-16, self.view.bounds.size.height-JP_BOTTOMMARGIN(16+32), 32, 32)];
         [_saveImageButton addTarget:self action:@selector(p_SaveImage) forControlEvents:UIControlEventTouchUpInside];
     }
     return _saveImageButton;

@@ -1,18 +1,35 @@
 PODS:
+  - JPCategory-OC/UIView (1.5.2)
+  - JPUtils-OC/Layout (0.0.5)
   - SDWebImage (5.0.1):
     - SDWebImage/Core (= 5.0.1)
   - SDWebImage/Core (5.0.1)
 
 DEPENDENCIES:
+  - JPCategory-OC/UIView (= 1.5.2)
+  - JPUtils-OC/Layout (from `https://github.com/baiyidjp/JPUtils-OC.git`, tag `0.0.5`)
   - SDWebImage
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
+    - JPCategory-OC
     - SDWebImage
 
+EXTERNAL SOURCES:
+  JPUtils-OC:
+    :git: https://github.com/baiyidjp/JPUtils-OC.git
+    :tag: 0.0.5
+
+CHECKOUT OPTIONS:
+  JPUtils-OC:
+    :git: https://github.com/baiyidjp/JPUtils-OC.git
+    :tag: 0.0.5
+
 SPEC CHECKSUMS:
+  JPCategory-OC: 15a8239cba52b7bf455b98dbcfcf36d6eb52e3c3
+  JPUtils-OC: 0b9d0b91c48b1448e9517a082fe56302da50f527
   SDWebImage: 27dd2c9ea07a2252f94557c9fbb6105ee94b74c9
 
-PODFILE CHECKSUM: 65af848676e9c544d1d3b74ec7cf21a520f9fcfd
+PODFILE CHECKSUM: 3f0c4693744c58a821f68d4a714b16c43fe6b6ae
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.10.0
