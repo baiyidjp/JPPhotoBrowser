@@ -7,7 +7,7 @@ target 'JPPhotoBrowserDemo' do
 
 pod 'SDWebImage'
 pod 'JPCategory-OC/UIView', '1.5.2'
-pod 'JPUtils-OC/Layout', :git => 'https://github.com/baiyidjp/JPUtils-OC.git', :tag => '0.0.5'
+pod 'JPUtils-OC/Layout', '0.0.5'
 
   # Pods for JPPhotoBrowserDemo
 
